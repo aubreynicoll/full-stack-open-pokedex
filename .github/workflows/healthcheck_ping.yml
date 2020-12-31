@@ -6,12 +6,13 @@ on:
 
 jobs:
   healthcheck_ping:
+    runs-on: ubuntu-18.04
     steps:
     - name: Check the deployed service URL
       uses: jtalk/url-health-check-action@2ff10af730f912a7b51f4e3868d9cb30de170a6b
       with:
         # Check the following URLs one by one sequentially
-        url: http://young-lowlands-97512.herokuapp.com/health
+        url: https://mighty-escarpment-70911.herokuapp.com/healthcheck
         # Follow redirects, or just report success on 3xx status codes
         follow-redirect: no # Optional, defaults to "no"
         # Fail this action after this many failed attempts
